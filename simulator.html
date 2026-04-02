@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Email Simulator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="simulator.css">
+</head>
+<body>
+    <div class="simulator-container">
+        <!-- Header -->
+        <div class="simulator-header">
+            <a href="../public/index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            <h1>Phishing Email Simulator</h1>
+            <p>Test your ability to identify phishing emails</p>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="scoreboard">
+            <div class="score-item">
+                <span class="score-label">Correct</span>
+                <span class="score-value" id="correct-count">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">Total</span>
+                <span class="score-value" id="total-count">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">Accuracy</span>
+                <span class="score-value" id="accuracy">0%</span>
+            </div>
+        </div>
+
+        <!-- Email Display -->
+        <div class="email-container">
+            <div class="email-card" id="email-card">
+                <div class="email-header">
+                    <div class="email-from">
+                        <strong>From:</strong> <span id="email-from">Loading...</span>
+                    </div>
+                    <div class="email-subject">
+                        <strong>Subject:</strong> <span id="email-subject">Loading...</span>
+                    </div>
+                </div>
+                <div class="email-body">
+                    <div class="email-content" id="email-content">
+                        Loading email content...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-legitimate" id="legitimate-btn">
+                    <i class="fas fa-check-circle"></i>
+                    This is Legitimate
+                </button>
+                <button class="btn btn-phishing" id="phishing-btn">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    This is Phishing
+                </button>
+            </div>
+        </div>
+
+        <!-- Feedback Modal -->
+        <div class="feedback-modal" id="feedback-modal">
+            <div class="feedback-content">
+                <div class="feedback-header">
+                    <i class="fas fa-check-circle feedback-correct" id="feedback-icon"></i>
+                    <h3 id="feedback-title">Correct!</h3>
+                </div>
+                <div class="feedback-body">
+                    <p id="feedback-message">Great job! You correctly identified this email.</p>
+                    <div class="feedback-details" id="feedback-details">
+                        <!-- Detailed explanation will be inserted here -->
+                    </div>
+                </div>
+                <div class="feedback-actions">
+                    <button class="btn btn-primary" id="next-email-btn">Next Email</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Modal -->
+        <div class="results-modal" id="results-modal">
+            <div class="results-content">
+                <div class="results-header">
+                    <i class="fas fa-trophy"></i>
+                    <h2>Simulation Complete!</h2>
+                </div>
+                <div class="results-body">
+                    <div class="final-stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="final-correct">0</span>
+                            <span class="stat-label">Correct</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="final-total">0</span>
+                            <span class="stat-label">Total</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="final-accuracy">0%</span>
+                            <span class="stat-label">Accuracy</span>
+                        </div>
+                    </div>
+                    <div class="performance-message" id="performance-message">
+                        <!-- Performance message will be inserted here -->
+                    </div>
+                </div>
+                <div class="results-actions">
+                    <button class="btn btn-secondary" id="restart-btn">Try Again</button>
+                    <button class="btn btn-primary" id="back-to-training-btn">Back to Training</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="simulator.js"></script>
+</body>
+</html>
